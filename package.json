@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/data-grid": "^4.0.0-alpha.37",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@types/react-router-dom": "^5.3.3",
+    "firebase": "^8.10.1",
+    "react-hook-form": "^7.41.1",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^5.3.4",
+    "reactfire": "^3.0.0",
+    "tslib": "^2.4.1"
+  }
+}
