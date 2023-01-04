@@ -14,27 +14,28 @@ const myTitle = "Garner's Car Inventory"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}
-
+    <FirebaseAppProvider firebaseConfig={firebaseConfig} suspense={true}>
+    <Provider store={store}>
     <Router>
       <Switch>
 
         <Route exact path="/">
             <Home title={myTitle} />
         </Route>
-        <Route exact path="/inventory">
+        <Route path="/inventory">
             <Inventory></Inventory>
         </Route>
-        <Route exact path="/car">
+        <Route path="/car">
             <Car></Car>
         </Route>
-        <Route exact path="/about">
+        <Route path="/about">
             <About></About>
         </Route>
 
       </Switch>
     </Router>
     </Provider>
+  </FirebaseAppProvider> 
   </React.StrictMode>,
   document.getElementById('root')
 );
