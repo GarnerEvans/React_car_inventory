@@ -28,6 +28,7 @@ const useStyles = makeStyles({
     button_text: {
         color: 'white',
         textDecoration: 'none',
+        textAlign: 'center'
     },
 });
 

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import Digits from '../../assets/images/Digits.png';
-
+import { AuthCheck } from 'reactfire'
 
 
     const useStyles = makeStyles({
@@ -69,30 +69,72 @@ import Digits from '../../assets/images/Digits.png';
         const classes = useStyles();
 
         return (
-            
+
             <div className={`${classes.row} ${classes.navbar} ${classes.width100} ${classes.alignCenter} ${classes.p5} ${classes.spaceBetween}`}>
-                <div className={`${classes.navlogo} `}>
-                        <Link to='/' className={`${classes.logo} ${classes.p5}`} />
-                </div>
-                <div className={`${classes.width60} ${classes.alignCenter}`}>
-                    <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween} ${classes.psides}`}>
-                        <li>
-                            <Button>
-                            <Link to='/Inventory' className={`${classes.navbarItem} ${classes.psides}`}>My Inventory</Link>
-                            </Button>
-                        </li>
-                        <li>
-                            <Button>
-                                <Link to='/Contact' className={`${classes.navbarItem} ${classes.psides}`}>Contact Us</Link>
-                            </Button>
-                        </li>
-                        <li>
-                            <Button>
-                                <Link to='/About' className={`${classes.navbarItem} ${classes.psides}`}>About Us</Link>
-                            </Button>
-                        </li>
-                    </ul>
-                </div>
+            <div className={`${classes.navlogo} `}>
+                    <Link to='/' className={`${classes.logo} ${classes.p5}`}>
+                    </Link>
             </div>
-        )
-    }
+            <div className={`${classes.width60} ${classes.alignCenter}`}>
+                <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween} ${classes.psides}`}>
+                <Suspense fallback={'loading...'}>
+                    <AuthCheck fallback={
+                        <li>
+                            <Link to="/signin" className={`${classes.navbarItem} ${classes.psides}`}>Sign In</Link>
+                        </li>
+                        }>
+                        <li>
+                            <Button>
+                                <Link to='/Inventory' className={`${classes.navbarItem} ${classes.psides}`}>My Inventory</Link>
+                            </Button>
+                        </li>
+                        <li>
+                            <Button>
+                                <Link to='Contact' className={`${classes.navbarItem} ${classes.psides}`}>Contact Us</Link>
+                            </Button>
+                        </li>
+                        <li>
+                            <Button>
+                                <Link to='About' className={`${classes.navbarItem} ${classes.psides}`}>About Us</Link>
+                            </Button>
+                        </li>
+                    </AuthCheck>
+                    </Suspense>
+                </ul>
+            </div>
+        </div>
+    )
+}
+            
+    //         <div className={`${classes.row} ${classes.navbar} ${classes.width100} ${classes.alignCenter} ${classes.p5} ${classes.spaceBetween}`}>
+    //             <div className={`${classes.navlogo} `}>
+    //                     <Link to='/' className={`${classes.logo} ${classes.p5}`} /></link>
+    //             </div>
+    //             <div className={`${classes.width60} ${classes.alignCenter}`}>
+    //                 <ul className={`${classes.ul} ${classes.row} ${classes.spaceBetween} ${classes.psides}`}>
+    //                     <suspense fallback = {'loading...'}>
+    //                         <AuthCheck fallback = {
+    //                     <li>
+    //                         <Link to="/signin" className={`${classes.navbarItem} ${classes.psides}`}>Sign In</Link>
+    //                     </li>
+    //                         }>
+    //                         <li>
+    //                             <Button>
+    //                                 <Link to='/Inventory' className={`${classes.navbarItem} ${classes.psides}`}>My Inventory</Link>
+    //                             </Button>
+    //                         </li>
+    //                         <li>
+    //                             <Button>
+    //                                 <Link to='/Contact' className={`${classes.navbarItem} ${classes.psides}`}>Contact Us</Link>
+    //                             </Button>
+    //                         </li>
+    //                         <li>
+    //                             <Button>
+    //                                 <Link to='/About' className={`${classes.navbarItem} ${classes.psides}`}>About Us</Link>
+    //                             </Button>
+    //                         </li>
+    //                 </ul>
+    //             </div>
+    //         </div>
+    //     )
+    // }

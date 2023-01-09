@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { FirebaseAppProvider, AuthCheck } from 'reactfire';
-import { Home, Car, About, Inventory } from './components'
+import { Home, Car, About, Inventory, SignIn } from './components'
 import './styles.css'
 import { firebaseConfig } from './firebaseConfig'
 import 'firebase/auth';
@@ -30,6 +30,9 @@ ReactDOM.render(
         </Route>
         <Route path="/about">
             <About></About>
+        </Route>
+        <Route path='/signin'>
+          <SignIn></SignIn>
         </Route>
 
       </Switch>

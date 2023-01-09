@@ -2,7 +2,7 @@ let token = '9549aff943f71b710ba11c146f23445daf6104c529b65a0b'
 
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`http://127.0.0.1:5000/`,{
+        const response = await fetch(`https://magical-breezy-clarinet.glitch.me/api/cars`,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export const server_calls = {
 },
 
 create: async(data: any = {}) => {
-    const response = await fetch(`http://127.0.0.1:5000/`, {
+    const response = await fetch(`https://magical-breezy-clarinet.glitch.me/api/cars`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ create: async(data: any = {}) => {
 },
 
 update: async (id:string, data:any = {}) => {
-    const response = await fetch(`http://127.0.0.1:5000/${id}`, { 
+    const response = await fetch(`https://magical-breezy-clarinet.glitch.me/api/cars/${id}`, { 
         method: 'POST',
         headers: {
             'Content-Type': 'appllication/json',
@@ -47,7 +47,7 @@ update: async (id:string, data:any = {}) => {
 },
 
 delete: async(id:string) => {
-    const response = await fetch(`http://127.0.0.1:5000/${id}`,{
+    const response = await fetch(`https://magical-breezy-clarinet.glitch.me/api/cars/${id}`,{
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
