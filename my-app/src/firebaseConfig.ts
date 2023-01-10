@@ -1,9 +1,8 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyAwE7EPtCk8biEW8XLEq2mdxpJ9bOUR5XY",
-    authDomain: "garners-car-inventory.firebaseapp.com",
-    projectId: "garners-car-inventory",
-    storageBucket: "garners-car-inventory.appspot.com",
-    messagingSenderId: "744004053981",
-    appId: "1:744004053981:web:ed0796faf85d14538d6434",
-    measurementId: "G-EXK2166RS6"
-  };
+  apiKey: "AIzaSyAQrja2QR9KEgebvX9jfXqCyapzXpmWzT0",
+  authDomain: "car-inventory2.firebaseapp.com",
+  projectId: "car-inventory2",
+  storageBucket: "car-inventory2.appspot.com",
+  messagingSenderId: "612342713235",
+  appId: "1:612342713235:web:f9279dbb7dd46ddb743666"
+}; 
